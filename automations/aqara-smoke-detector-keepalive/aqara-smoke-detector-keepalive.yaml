@@ -30,19 +30,6 @@ blueprint:
         # TODO: optimize the filter or entity option to be more fault tolerant to
         #       variations of model names
         device:
-          filter:
-            - integration: mqtt
-              manufacturer: Aqara
-              model: Smart smoke detector
-            - integration: mqtt
-              manufacturer: Aqara
-              model: Smart smoke detector (JY-GZ-01AQ)
-            - integration: mqtt
-              manufacturer: Aqara
-              model: (JY-GZ-01AQ)
-            - integration: mqtt
-              manufacturer: Aqara
-              model: JY-GZ-01AQ
           multiple: true
     trigger__time_pattern:
       name: "Time Pattern Trigger"
@@ -80,4 +67,5 @@ actions:
     action: switch.toggle
     target:
       entity_id: "{{ detector__heartbeat_switch }}"
+
 
