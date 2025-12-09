@@ -658,7 +658,7 @@ actions:
                             data:
                               title: "{{ input_firstalarm__notify_title }}"
                               message: >
-                                {{ input_firstalarm__notify_message }}. Område: {{ sensors_smoke_detected | map('area_name') | list | join(', ') }}
+                                {{ input_firstalarm__notify_message }} Alarm utløst i {{ sensors_smoke_detected | map('area_name') | list | join(', ') }}
                               data:
                                 # Show timer and make notification disappear.
                                 timeout: "{{ input_firstalarm__waittimeout_seconds }}"
@@ -934,7 +934,7 @@ actions:
                   data:
                     title: "{{ prepared_allalarm_notify_title }}"
                     message: >
-                      {{ prepared_allalarm_notify_message }}. Område: {{ realfire__areas_smoke_detected }}
+                      {{ prepared_allalarm_notify_message }} Alarm utløst i: {{ realfire__areas_smoke_detected }}
                     data:
                       # Notification is send even on rate limit reached
                       ttl: 0
@@ -1063,6 +1063,7 @@ actions:
                 target:
                   entity_id: "{{ buzzers_all }}"
           
+
 
 
 
