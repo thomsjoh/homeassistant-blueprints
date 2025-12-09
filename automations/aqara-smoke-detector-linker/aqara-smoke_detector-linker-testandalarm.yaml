@@ -124,6 +124,9 @@ blueprint:
             - integration: mqtt
               manufacturer: Aqara
               model: JY-GZ-01AQ
+            - integration: mqtt
+              manufacturer: Xiaomi
+              model: JY-GZ-01AQ
           multiple: true
     alarm__notify_devices:
       name: Mobile device to notify on smoke alarms
@@ -1080,3 +1083,4 @@ actions:
                 target:
                   entity_id: "{{ buzzers_all }}"
           
+
